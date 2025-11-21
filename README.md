@@ -17,8 +17,7 @@
 This extension exposes Lua functions that allow interaction with the MediaWiki Action API. These functions can be used within Lua modules to perform various tasks, such as querying pages, fetching user information, or performing other API-supported actions.
 
 ## Example
-1. Create a new Lua module on your MediaWiki.
-2. Use the `mw.api` library to interact with the Action API. For example:
+1. Create a new Lua module on your MediaWiki with a content like:
    ```lua
    local p = {}
    
@@ -31,9 +30,8 @@ This extension exposes Lua functions that allow interaction with the MediaWiki A
    
    return p
    ```
-3. Save the module and use it
+2. Try to call the main method in debug console:
    ```lua
-   Debug console
    mw.logObject(p.test())
    ```
    ```lua
