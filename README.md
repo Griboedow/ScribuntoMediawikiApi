@@ -1,5 +1,5 @@
 # ScribuntoMediawikiApi Extension
-[ScribuntoMediawikiApi extension](https://www.mediawiki.org/wiki/Extension:ScribuntoMediawikiApi) provides Lua modules with the ability to interact with the [MediaWiki Action API](https://www.mediawiki.org/wiki/API:Action_API). This allows Lua scripts to query and manipulate MediaWiki data programmatically.
+[ScribuntoMediawikiApi](https://www.mediawiki.org/wiki/Extension:ScribuntoMediawikiApi) extension provides Lua modules with the ability to interact with the [MediaWiki Action API](https://www.mediawiki.org/wiki/API:Action_API). This allows Lua scripts to query and manipulate MediaWiki data programmatically.
 
 # Prerequisites
 - MediaWiki 1.39 +
