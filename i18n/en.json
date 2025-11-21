@@ -3,6 +3,5 @@
         "authors": [
             "Nikolai Kochkin"
         ]
-    },
-    "mwapiforlua-desc": "MwApiForLua extension to provide MediaWiki API access from Lua modules"
+    }
 }
