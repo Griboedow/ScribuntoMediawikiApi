@@ -11,7 +11,7 @@ class HooksHandler
 	public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ): bool
 	{
 		if ( $engine == 'lua' ) {
-			$extraLibraries['mw.actionapi'] = LuaMwApiLibrary::class;
+			$extraLibraries['mw.api'] = LuaMwApiLibrary::class;
 		}
 
 		return true;
