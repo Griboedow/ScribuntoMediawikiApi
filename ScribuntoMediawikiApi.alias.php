@@ -4,5 +4,5 @@ $specialPageAliases = [];
 
 /** English (English) */
 $specialPageAliases['en'] = [
-	'MwApiForLua' => [ 'MwApiForLua' ],
+	'ScribuntoMediawikiApi' => [ 'ScribuntoMediawikiApi' ],
 ];

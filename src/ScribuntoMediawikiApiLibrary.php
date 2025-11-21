@@ -1,11 +1,11 @@
 <?php
-namespace MediaWiki\Extension\MwApiForLua;
+namespace MediaWiki\Extension\ScribuntoMediawikiApi;
 
 use Scribunto_LuaLibraryBase;
 use RequestContext;
 
 
-class LuaMwApiLibrary extends Scribunto_LuaLibraryBase {
+class ScribuntoMediawikiApiLibrary extends Scribunto_LuaLibraryBase {
 
 
 	const API_ERROR_FIELD = 'error';

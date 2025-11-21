@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extension\MwApiForLua;
+namespace MediaWiki\Extension\ScribuntoMediawikiApi;
 
 class HooksHandler
 {
@@ -11,7 +11,7 @@ class HooksHandler
 	public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ): bool
 	{
 		if ( $engine == 'lua' ) {
-			$extraLibraries['mw.api'] = LuaMwApiLibrary::class;
+			$extraLibraries['mw.api'] = ScribuntoMediawikiApiLibrary::class;
 		}
 
 		return true;
