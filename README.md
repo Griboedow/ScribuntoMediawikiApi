@@ -23,13 +23,10 @@ This extension exposes Lua functions that allow interaction with the MediaWiki A
    local p = {}
    
    function p.test()
-   	local result = mw.api.actionApiCall{
-          action = 'query',
-          meta = 'userinfo'
-   	}
-   	
-   	mw.logObject(result)
-   	return result
+     return mw.api.actionApiCall{
+         action = 'query',
+         meta = 'userinfo'
+     }
    end
    
    return p
@@ -37,7 +34,7 @@ This extension exposes Lua functions that allow interaction with the MediaWiki A
 3. Save the module and use it
    ```lua
    Debug console
-   p.test()
+   mw.logObject(p.test())
    ```
    ```lua
    table#1 {
