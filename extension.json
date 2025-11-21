@@ -1,0 +1,28 @@
+{
+  "name": "MwApiForLua",
+  "version": "0.1.0",
+  "author": [
+    "Nikolai Kochkin"
+  ],
+  "description": "MwApiForLua extension to provide MediaWiki API access from Lua modules",
+  "license-name": "MIT",
+  "type": "other",
+  "requires": {
+    "MediaWiki": ">= 1.39",
+    "extensions": {
+      "Scribunto": "*"
+    }
+  },
+  "AutoloadNamespaces": {
+    "MediaWiki\\Extension\\MwApiForLua\\": "src/"
+  },
+  "Hooks": {
+    "ScribuntoExternalLibraries": "MediaWiki\\Extension\\MwApiForLua\\HooksHandler::onScribuntoExternalLibraries"
+  },
+  "MessagesDirs": {
+    "MwApiForLua": [
+      "i18n"
+    ]
+  },
+  "manifest_version": 2
+}
