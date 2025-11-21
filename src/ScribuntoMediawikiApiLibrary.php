@@ -16,7 +16,7 @@ class ScribuntoMediawikiApiLibrary extends Scribunto_LuaLibraryBase {
 			'actionApiCall'  => [ $this, 'actionApiCall' ]
 		];
 
-		$this->getEngine()->registerInterface( __DIR__ . '/' . 'mw.actionapi.lua', $lib, [] );
+		$this->getEngine()->registerInterface( __DIR__ . '/' . 'mw.api.lua', $lib, [] );
 	}
 
 	public function actionApiCall( $arguments = null ) {
