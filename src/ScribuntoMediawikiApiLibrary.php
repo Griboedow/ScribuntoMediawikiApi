@@ -41,7 +41,7 @@ class ScribuntoMediawikiApiLibrary extends Scribunto_LuaLibraryBase {
         $fauxContext->setUser( $context->getUser() );
         $fauxContext->setLanguage( $context->getLanguage() );
 
-        $apiMain = new \ApiMain( $fauxContext, true );
+        $apiMain = new \ApiMain( $fauxContext );
 
         try {
             $apiMain->execute();
