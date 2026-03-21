@@ -7,6 +7,17 @@ function api.actionApiCall( params )
 	return result
 end
 
+--- Make a read-only REST API call using MediaWiki internals (no HTTP round-trip).
+-- @param path   string  Path relative to the REST root, e.g. "/v1/page/Main_Page"
+-- @param query  table   Optional key/value query-string parameters (e.g. {limit=5})
+-- @return table Decoded JSON response, or {error="..."} on failure.
+function api.restApiCall( path, query )
+	if type( path ) ~= 'string' then return nil end
+	local result = php.restApiCall( path, query )
+	if result == nil then return nil end
+	return result
+end
+
 function api.setupInterface()
 	-- Interface setup
 	api.setupInterface = nil
@@ -21,3 +32,4 @@ function api.setupInterface()
 end
 
 return api
+

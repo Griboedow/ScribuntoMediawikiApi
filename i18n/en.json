@@ -1,7 +1,9 @@
 {
     "@metadata": {
         "authors": [
-            "Nikolai Kochkin"
+            "[https://www.mediawiki.org/wiki/User:Urfiner Urfiner] (Nikolai Kochkin)"
         ]
-    }
+    },
+    "scribuntomediawikiapi": "ScribuntoMediawikiApi",
+    "scribuntomediawikiapi-desc": "Provides MediaWiki Action API and REST API access from Lua modules via Scribunto"
 }

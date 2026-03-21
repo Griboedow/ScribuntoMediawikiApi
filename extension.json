@@ -1,8 +1,8 @@
 {
   "name": "ScribuntoMediawikiApi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": [
-    "Nikolai Kochkin"
+    "[https://www.mediawiki.org/wiki/User:Urfiner Urfiner] (Nikolai Kochkin)"
   ],
   "description": "ScribuntoMediawikiApi extension to provide MediaWiki API access from Lua modules",
   "license-name": "MIT",
