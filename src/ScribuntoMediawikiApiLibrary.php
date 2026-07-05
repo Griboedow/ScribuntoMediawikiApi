@@ -33,8 +33,16 @@ class ScribuntoMediawikiApiLibrary extends Scribunto_LuaLibraryBase {
         $context = \RequestContext::getMain();
         $session = $context->getRequest()->getSession();
 
-        $fauxRequest = new \FauxRequest( $arguments, true, $session );
-        $fauxRequest->setSessionId( $session->getSessionId() );
+        // Support both old unnamespaced FauxRequest and new namespaced MediaWiki\Request\FauxRequest
+        $fauxRequestClass = $this->resolveClass( 'FauxRequest' );
+        if ( $fauxRequestClass === null ) {
+            return [ $this->convertArrayToLuaTable( [ self::API_ERROR_FIELD => 'actionApiCall: FauxRequest class not found' ] ) ];
+        }
+
+        $fauxRequest = new $fauxRequestClass( $arguments, true, $session );
+        if ( $session && method_exists( $fauxRequest, 'setSessionId' ) ) {
+            $fauxRequest->setSessionId( $session->getSessionId() );
+        }
 
         $fauxContext = new \RequestContext();
         $fauxContext->setRequest( $fauxRequest );
@@ -149,5 +157,21 @@ class ScribuntoMediawikiApiLibrary extends Scribunto_LuaLibraryBase {
 		}
 		return $ar;
 	}
-}
 
+	/**
+	 * Resolve a class name that may exist either unnamespaced (old MW) or
+	 * under the MediaWiki\Request namespace (newer MW).
+	 *
+	 * @param string $shortName Class short name, e.g. 'FauxRequest' or 'FauxRequestUpload'
+	 * @return string|null Fully-qualified class name if found, or null
+	 */
+	private function resolveClass( $shortName ) {
+		$candidates = [ '\\MediaWiki\\Request\\' . $shortName, '\\' . $shortName ];
+		foreach ( $candidates as $c ) {
+			if ( class_exists( $c ) ) {
+				return $c;
+			}
+		}
+		return null;
+	}
+}
